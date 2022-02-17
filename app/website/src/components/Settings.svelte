@@ -1,9 +1,12 @@
 <script>
   import DrawerButton from "./DrawerButton.svelte";
+  import ThemeSwitcher from "./ThemeSwitcher.svelte";
 </script>
 
-<DrawerButton placement="right">
-  <div slot="drawer">Settings</div>
+<DrawerButton>
+  <div slot="drawer">
+    <ThemeSwitcher />
+  </div>
 
   <svg
     slot="button"
@@ -21,6 +24,6 @@
 
 <style>
   svg {
-    fill: #fff;
+    fill: var(--fg-color);
   }
 </style>

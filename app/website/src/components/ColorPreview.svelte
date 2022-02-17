@@ -25,5 +25,6 @@
     padding: 5px;
     border-bottom-left-radius: 0;
     border-bottom-right-radius: 0;
+    user-select: none;
   }
 </style>

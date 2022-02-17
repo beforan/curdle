@@ -13,12 +13,11 @@
 
 <style>
   header {
-    color: #fff;
-    background-color: #111;
+    background-color: var(--bg-accent);
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    border-bottom: thin solid #555;
+    border-bottom: thin solid var(--value-border-color);
     padding: 5px;
   }
 </style>

@@ -4,9 +4,7 @@
   export let key;
 
   const handleClick = () => {
-    document.dispatchEvent(
-      new CustomEvent("game-keydown", { detail: { key } })
-    );
+    window.dispatchEvent(new CustomEvent("game-keydown", { detail: { key } }));
   };
 </script>
 
@@ -19,12 +17,12 @@
 <style>
   button {
     font-size: 1.4em;
-    background-color: darkgray;
+    background-color: var(--button-color);
     padding: 0.5em;
     border-radius: 5px;
     border-width: 0;
     text-align: center;
-    color: #fff;
+    color: var(--fg-color);
     font-weight: bold;
     line-height: 0;
     min-height: 48px;
@@ -32,12 +30,12 @@
     user-select: none;
   }
   button:hover {
-    background: lightsteelblue;
+    background: var(--button-hover);
     transition: background-color linear 0.02s;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
   }
   button:active {
-    background: steelblue;
+    background: var(--button-active);
     transition: background-color linear 0.02s;
   }
   button:focus {
@@ -45,7 +43,7 @@
   }
   /* special case for SVG color rather than html elements*/
   button :global(svg) {
-    fill: #fff;
+    fill: var(--fg-color);
   }
 
   .long {

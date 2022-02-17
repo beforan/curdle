@@ -2,7 +2,7 @@
   import DrawerButton from "./DrawerButton.svelte";
 </script>
 
-<DrawerButton placement="left">
+<DrawerButton>
   <div slot="drawer">Help</div>
 
   <svg
@@ -20,6 +20,6 @@
 
 <style>
   svg {
-    fill: #fff;
+    fill: var(--fg-color);
   }
 </style>

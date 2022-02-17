@@ -25,13 +25,14 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    color: #fff;
+    color: var(--fg-color);
     font-weight: bold;
     font-size: 1.6em;
     border-width: 2px;
-    border-color: #777;
+    border-color: var(--value-border-color);
     border-style: solid;
     background-color: var(--bg, inherit);
+    user-select: none;
   }
 
   .borderless {
@@ -39,7 +40,7 @@
   }
 
   .active {
-    border-color: #0c0;
+    border-color: var(--value-active);
   }
 
   .rounded {
@@ -47,19 +48,16 @@
   }
 
   .missing {
-    background-color: #777;
-
+    background-color: var(--value-missing);
   }
 
   .partial {
-    background-color: #bb0;
-    border-color: #bb0;
-
+    background-color: var(--value-partial);
+    border-color: var(--value-partial);
   }
 
   .success {
-    background-color: #4b4;
-    border-color: #4b4;
-
+    background-color: var(--value-success);
+    border-color: var(--value-success);
   }
 </style>

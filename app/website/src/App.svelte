@@ -3,7 +3,10 @@
   import GuessesGrid from "./components/GuessesGrid.svelte";
   import Header from "./components/Header.svelte";
   import Keypad from "./components/Keypad.svelte";
+  import Theme from "./components/Theme.svelte";
 </script>
+
+<Theme />
 
 <div id="grid-layout">
   <Header />
@@ -20,7 +23,8 @@
 
 <style>
   :root {
-    background-color: #222;
+    background-color: var(--bg-color);
+    color: var(--fg-color);
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
       Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   }
