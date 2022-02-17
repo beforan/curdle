@@ -3,6 +3,8 @@
 </script>
 
 <script lang="ts">
+  import { getTodaysColorValue } from "../lib/today";
+
   import ValueBox from "./ValueBox.svelte";
 
   export let key: number;
@@ -10,19 +12,25 @@
 
   let currentValue = 0;
   let values = ["", "", "", "", "", ""];
+  let results = [];
 
   $: color = `#${values.map((v) => v || "0").join("")}`;
 
   let invalid = false;
 
   //#region Event Handlers
-  const handleEnterKey = () => {
+  const handleEnterKey = async () => {
     // if any falsey values; can't submit
     if (values.some((v) => !v)) {
       invalid = true; // triggers an animation
       setTimeout(() => (invalid = false), 200);
       return;
     }
+
+    const today = await getTodaysColorValue();
+    if (color === today) {
+      console.log("YAY");
+    } else console.log("BOO", color, today);
   };
 
   const handleBackspaceKey = () => {

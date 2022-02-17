@@ -17,5 +17,7 @@
     color: transparent;
     -webkit-background-clip: text;
     background-clip: text;
+    cursor: inherit;
+    user-select: none;
   }
 </style>
