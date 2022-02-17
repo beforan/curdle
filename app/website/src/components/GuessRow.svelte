@@ -1,5 +1,7 @@
 <script context="module">
-  let currentGroup = 0;
+  import { writable } from "svelte/store";
+
+  let currentGuess = writable(0);
 </script>
 
 <script lang="ts">
@@ -8,7 +10,10 @@
   import ValueBox from "./ValueBox.svelte";
 
   export let key: number;
-  $: isCurrent = currentGroup === key;
+  $: isCurrent = $currentGuess === key;
+  $: {
+    console.log($currentGuess);
+  }
 
   let currentValue = 0;
   let values = ["", "", "", "", "", ""];
@@ -29,8 +34,18 @@
 
     const today = await getTodaysColorValue();
     if (color === today) {
-      console.log("YAY");
-    } else console.log("BOO", color, today);
+      results = [true, true, true, true, true, true];
+      $currentGuess = -1; // no more guesses
+    } else {
+      const arrColor = color.substring(1).split("");
+      const arrToday = today.substring(1).split("");
+      results = arrColor.map((c, i) => {
+        if (c === arrToday[i]) return true;
+        if (arrToday.includes(c)) return null;
+        return false;
+      });
+      $currentGuess++;
+    }
   };
 
   const handleBackspaceKey = () => {
@@ -64,7 +79,7 @@
 <section class="row" class:shake={invalid}>
   <ValueBox borderless>#</ValueBox>
   {#each values as v, i}
-    <ValueBox active={isCurrent && i === currentValue}>{v}</ValueBox>
+    <ValueBox active={isCurrent && i === currentValue} state={results[i]}>{v}</ValueBox>
   {/each}
   <ValueBox borderless rounded bg={color} />
 </section>

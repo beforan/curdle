@@ -3,6 +3,7 @@
   export let active = false;
   export let rounded = false;
   export let bg: string | null = null;
+  export let state: boolean | null | undefined = undefined; // eesh it's a 4 state boolean...
 </script>
 
 <div
@@ -10,6 +11,9 @@
   class:borderless
   class:active
   class:rounded
+  class:missing={state === false}
+  class:partial={state === null}
+  class:success={state === true}
 >
   <slot />
 </div>
@@ -31,7 +35,7 @@
   }
 
   .borderless {
-    border-color: rgba(0,0,0,0);
+    border-color: rgba(0, 0, 0, 0);
   }
 
   .active {
@@ -40,5 +44,22 @@
 
   .rounded {
     border-radius: 0.2em;
+  }
+
+  .missing {
+    background-color: #777;
+
+  }
+
+  .partial {
+    background-color: #bb0;
+    border-color: #bb0;
+
+  }
+
+  .success {
+    background-color: #4b4;
+    border-color: #4b4;
+
   }
 </style>

@@ -1,5 +1,5 @@
 <script>
-  // import {today} from "../stores/today";
+  // import {today} from "../lib/today";
   //`background-image: url(/${today}.png);`;
   // TODO
   const style = `background-image: url(/test.png);`;
