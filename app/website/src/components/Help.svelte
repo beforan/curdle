@@ -2,7 +2,7 @@
   import DrawerButton from "./DrawerButton.svelte";
 </script>
 
-<DrawerButton>
+<DrawerButton placement="left">
   <div slot="drawer">Help</div>
 
   <svg

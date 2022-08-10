@@ -3,7 +3,7 @@
   import ThemeSwitcher from "./ThemeSwitcher.svelte";
 </script>
 
-<DrawerButton>
+<DrawerButton placement="right">
   <div slot="drawer">
     <ThemeSwitcher />
   </div>
@@ -25,5 +25,9 @@
 <style>
   svg {
     fill: var(--fg-color);
+  }
+
+  div {
+    width: 375px;
   }
 </style>

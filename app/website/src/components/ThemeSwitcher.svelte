@@ -10,3 +10,9 @@
   Dark mode
   <input type="checkbox" on:change={toggleColorMode} checked={darkMode} />
 </label>
+
+<style>
+  label {
+    display: block;
+  }
+</style>

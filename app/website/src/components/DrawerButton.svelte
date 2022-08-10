@@ -1,14 +1,15 @@
 <script>
   import Drawer from "svelte-drawer-component";
   let open = false;
+  export let placement;
 </script>
 
 <div>
-  <Drawer {open} placement="bottom" size="90vh">
+  <Drawer {open} {placement} size="375px">
     <div class="close">
       <button class="close" on:click={() => (open = false)}>&times;</button>
     </div>
-    <div>
+    <div class="drawer">
       <slot name="drawer" />
     </div>
   </Drawer>
@@ -22,7 +23,7 @@
   div {
     display: flex;
     align-items: center;
-    background-blend-mode: lighten;
+    justify-content: center;
   }
 
   button {
