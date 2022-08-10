@@ -1,0 +1,12 @@
+{
+  "name": "daily-image",
+  "private": true,
+  "type": "module",
+  "module": "index.js",
+  "author": "Jon Couldridge <jon@jon.gg>",
+  "license": "MIT",
+  "dependencies": {
+    "canvas": "^2.9.0",
+    "png-chunks-encode": "^1.0.0"
+  }
+}
